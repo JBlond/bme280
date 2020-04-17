@@ -1,9 +1,11 @@
-/*
+/**
  * This has been is tested on Raspberry PI 4B+
  * you can use I2C or SPI interface for testing
  * If you use I2C interface,the default Address in this demo is 0x76 or 0X77
+ * Look for ###ADDRESS### in the code
+ * use sudo i2cdetect -y 1
  * If you use SPI interface, PIN 27 define SPI_CS
-*/
+ */
 
 #include "bme280.h"
 #include <stdio.h>
@@ -170,7 +172,9 @@ int main(int argc, char* argv[])
 		printf("Failed to open the i2c bus %s", argv[1]);
 		exit(1);
 	}
+	// change here ###ADDRESS###
 	if (ioctl(fd, I2C_SLAVE, 0x76) < 0) {
+	// if (ioctl(fd, I2C_SLAVE, 0x77) < 0) {
 		printf("Failed to acquire bus access and/or talk to slave.\n");
 		exit(1);
 	}
