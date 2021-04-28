@@ -40,6 +40,6 @@ just run **make**
 
 ## Libs
 
-- Sensor driver for BME280 sensor
-- wiringPi
-- wiringPiSPI
+- Sensor driver for BME280 sensor (BSD-3-Clause License)
+- wiringPi (LGPL)
+- wiringPiSPI (LGPL 3.0)
